@@ -10,7 +10,7 @@ import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 
 
-export const url = 'https://abg-music-api.onrender.com'
+export const url = process.env.REACT_APP_API_URL || 'https://abg-music-api.onrender.com'
 
 
 function App() {
