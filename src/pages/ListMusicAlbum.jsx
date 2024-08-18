@@ -12,7 +12,7 @@ function ListMusicAlbum() {
     const fetchAlbums = async () => {
 
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/album/list`);
+            const response = await axios.get(`process.env.REACT_APP_API_URL/api/album/list`);
 
             if (response.data.success) {
                 setData(response.data.albums)
@@ -26,7 +26,7 @@ function ListMusicAlbum() {
 
         try {
 
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/album/remove`, {id})
+            const response = await axios.post(`process.env.REACT_APP_API_URL/api/album/remove`, {id})
 
             if (response.data.success) {
                 toast.success(response.data.message);
