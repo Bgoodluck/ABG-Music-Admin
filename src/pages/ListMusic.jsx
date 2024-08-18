@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { url } from '../App';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -8,7 +7,7 @@ function ListMusic() {
 
     const fetchSongs = async () => {
         try {
-            const response = await axios.get(`${url}/api/song/list`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/song/list`);
 
             if (response.data.success) {
                 setData(response.data.songs);
@@ -22,7 +21,7 @@ function ListMusic() {
 
         try {
                     
-          const response = await axios.post(`${url}/api/song/remove`, {id});
+          const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/song/remove`, {id});
 
 
           if (response.data.success) {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import axios from 'axios';
-import { url } from '../App';
 import { toast } from 'react-toastify';
 
 
@@ -30,7 +29,7 @@ function AddMusicAlbum() {
                 formData.append('image', image);
                 formData.append('bgColor', color);
 
-                const response = await axios.post(`${url}/api/album/add`, formData);
+                const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/album/add`, formData);
 
                 if (response.data.success) {
                     toast.success("Album Added");
